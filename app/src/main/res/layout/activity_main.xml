@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="310dp"
-        android:layout_height="292dp"
+        android:layout_width="356dp"
+        android:layout_height="320dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -24,10 +24,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="Select"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:rippleColor="@color/black"
+        app:strokeColor="@color/white" />
 
     <Button
         android:id="@+id/button2"
@@ -37,17 +40,31 @@
         android:layout_marginEnd="68dp"
         android:text="Predict"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:rippleColor="@color/teal_700" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="194dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="172dp"
+        android:layout_width="154dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="136dp"
         android:text="Select and press predict"
+        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="154dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="136dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

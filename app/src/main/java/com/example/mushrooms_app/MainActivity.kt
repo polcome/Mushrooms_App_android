@@ -2,6 +2,7 @@ package com.example.mushrooms_app
 
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,12 +11,11 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.mushrooms_app.ml.BestModelMobile
-import com.example.mushrooms_app.ml.MobilenetV110224Quant
+import com.example.mushrooms_app.ml.BestModelMobile2
 import org.tensorflow.lite.DataType
-import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.nio.ByteBuffer
+import java.nio.ByteOrder
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,7 +32,8 @@ class MainActivity : AppCompatActivity() {
         val inputString = application.assets.open(fileName).bufferedReader().use { it.readText()}
         var townList = inputString.split("\n")
 
-        var tv:TextView = findViewById(R.id.textView)
+        var predn:TextView = findViewById(R.id.textView)
+        var predp:TextView = findViewById(R.id.textView3)
 
         var select: Button = findViewById(R.id.button)
 
@@ -45,20 +46,40 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-        var predict:Button = findViewById(R.id.button2)
+        var predict: Button = findViewById(R.id.button2)
 
         predict.setOnClickListener(View.OnClickListener {
 
-            var resize: Bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
 
-            val model = BestModelMobile.newInstance(this)
+            val model = BestModelMobile2.newInstance(this)
 
             val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.FLOAT32)
 
-            var tbuffer = TensorImage.fromBitmap(resize)
-            var byteBuffer=tbuffer.buffer
+            val bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
+            val input = ByteBuffer.allocateDirect(224*224*3*4).order(ByteOrder.nativeOrder())
+            for (y in 0 until 224) {
+                for (x in 0 until 224) {
+                    val px = bitmap.getPixel(x, y)
 
+                    // Get channel values from the pixel value.
+                    val r = Color.red(px)
+                    val g = Color.green(px)
+                    val b = Color.blue(px)
 
+                    // Normalize channel values to [-1.0, 1.0]. This requirement depends on the model.
+                    // For example, some models might require values to be normalized to the range
+                    // [0.0, 1.0] instead.
+                    val rf = (r - 127) / 255f
+                    val gf = (g - 127) / 255f
+                    val bf = (b - 127) / 255f
+
+                    input.putFloat(rf)
+                    input.putFloat(gf)
+                    input.putFloat(bf)
+                }
+            }
+
+            val byteBuffer=input
 
             inputFeature0.loadBuffer(byteBuffer)
 
@@ -66,8 +87,10 @@ class MainActivity : AppCompatActivity() {
             val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
             var max = getMax(outputFeature0.floatArray)
+            val predvalue = outputFeature0.floatArray
 
-            tv.setText(townList[max])
+            predn.setText(townList[max])
+            predp.setText(predvalue.get(max).toString())
 
             model.close()
 
@@ -85,15 +108,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun getMax(arr:FloatArray) : Int{
+    fun getMax(arr:FloatArray) : Int {
 
         var ind = 0
         var min = 0.0f
 
-        for(i in 0..11)
-        {
-            if(arr[i]>min)
-            {
+        for (i in 0..11) {
+            if (arr[i] > min) {
                 ind = i
                 min = arr[i]
             }
@@ -101,4 +122,6 @@ class MainActivity : AppCompatActivity() {
         return ind
     }
 
+
 }
+
