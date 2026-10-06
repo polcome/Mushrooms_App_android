@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta de bosc (mode fosc) -->
+    <color name="md_primary">#A8D38E</color>
+    <color name="md_on_primary">#133800</color>
+    <color name="md_primary_container">#275219</color>
+    <color name="md_on_primary_container">#C3EFA8</color>
+    <color name="md_secondary">#EDBD92</color>
+    <color name="md_on_secondary">#462A0B</color>
+    <color name="md_secondary_container">#5F3F1F</color>
+    <color name="md_on_secondary_container">#FFDCC0</color>
+    <color name="md_background">#12140E</color>
+    <color name="md_on_background">#E3E3D9</color>
+    <color name="md_surface_variant">#45483D</color>
+    <color name="md_on_surface_variant">#C5C8B9</color>
+    <color name="md_outline">#8F9284</color>
+    <color name="md_surface_container">#1E201A</color>
+    <color name="md_surface_container_low">#1A1C16</color>
+    <color name="md_surface_container_lowest">#0D0F09</color>
+    <color name="md_surface_container_highest">#34362F</color>
+    <color name="md_surface_container_high">#292B24</color>
+
+    <color name="conf_high">#7BC67E</color>
+    <color name="conf_mid">#F0A940</color>
+    <color name="conf_low">#FF8A80</color>
+</resources>

@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Paleta de bosc (mode clar) -->
+    <color name="md_primary">#3E6B2F</color>
+    <color name="md_on_primary">#FFFFFF</color>
+    <color name="md_primary_container">#C3EFA8</color>
+    <color name="md_on_primary_container">#082100</color>
+    <color name="md_secondary">#7A5634</color>
+    <color name="md_on_secondary">#FFFFFF</color>
+    <color name="md_secondary_container">#FFDCC0</color>
+    <color name="md_on_secondary_container">#2D1600</color>
+    <color name="md_background">#FAF8F0</color>
+    <color name="md_on_background">#1B1C17</color>
+    <color name="md_surface_variant">#E2E4D5</color>
+    <color name="md_on_surface_variant">#45483D</color>
+    <color name="md_outline">#75786C</color>
+    <color name="md_surface_container">#EFEEE5</color>
+    <color name="md_surface_container_low">#F4F3EA</color>
+    <color name="md_surface_container_lowest">#FFFFFF</color>
+    <color name="md_surface_container_highest">#E3E3D9</color>
+    <color name="md_surface_container_high">#E9E8DF</color>
+
+    <!-- Nivell de confiança del resultat -->
+    <color name="conf_high">#2E7D32</color>
+    <color name="conf_mid">#B26A00</color>
+    <color name="conf_low">#BA1A1A</color>
 </resources>

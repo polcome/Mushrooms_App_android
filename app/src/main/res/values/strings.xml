@@ -1,3 +1,40 @@
 <resources>
-    <string name="app_name">Mushrooms_app</string>
+    <string name="app_name">Bolets</string>
+    <string name="subtitle">Identifica el gènere d\'un bolet amb una foto</string>
+
+    <string name="placeholder_title">Toca per triar una foto</string>
+    <string name="placeholder_hint">o fes-ne una amb la càmera</string>
+    <string name="clear_image">Treu la foto</string>
+    <string name="mushroom_image">Foto del bolet</string>
+
+    <string name="gallery">Galeria</string>
+    <string name="camera">Càmera</string>
+    <string name="identify">Identificar</string>
+    <string name="analyzing">Analitzant…</string>
+
+    <string name="result_label">És probablement…</string>
+    <string name="result_percent">%1$.1f %% de confiança</string>
+    <string name="percent_short">%1$.1f %%</string>
+    <string name="other_results">Altres possibilitats</string>
+    <string name="confidence_high">Alta</string>
+    <string name="confidence_mid">Mitjana</string>
+    <string name="confidence_low">Baixa</string>
+
+    <string name="more_info">Més informació</string>
+
+    <string name="catalog_title">Bolets que reconeix</string>
+    <string name="catalog_subtitle">12 gèneres · toca\'n un per saber-ne més</string>
+    <string name="how_to_recognize">Com reconèixer-lo</string>
+    <string name="photo_credit">Foto: %1$s · Wikimedia Commons</string>
+    <string name="edibility_mostly_edible">Molts comestibles</string>
+    <string name="edibility_mixed">Comestibles i tòxics</string>
+    <string name="edibility_toxic">Tòxics</string>
+    <string name="edibility_deadly">Espècies mortals</string>
+    <string name="edibility_no_interest">Sense interès culinari</string>
+
+    <string name="disclaimer">Resultat orientatiu. No decideixis mai si un bolet és comestible a partir d\'aquesta app.</string>
+
+    <string name="error_image">No s\'ha pogut llegir la imatge</string>
+    <string name="error_no_camera">No hi ha cap app de càmera disponible</string>
+    <string name="error_model">No s\'ha pogut analitzar la imatge</string>
 </resources>
